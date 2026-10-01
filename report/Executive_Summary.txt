@@ -1,0 +1,27 @@
+NASSAU CANDY DISTRIBUTOR
+EXECUTIVE SUMMARY
+
+Objective
+Develop a decision-support system that predicts order lead time and evaluates potential factory reassignment scenarios while retaining visibility into historical profitability.
+
+Approach
+• Cleaned and validated the supplied Nassau Candy transactional dataset.
+• Defined Lead Time = Ship Date − Order Date.
+• Engineered calendar and profitability features.
+• Compared Linear Regression, Random Forest, and Gradient Boosting.
+• Evaluated models using MAE, RMSE, and R².
+• Built an explainable factory what-if engine using the five supplied factories.
+• Used historical gross margin as profitability context.
+• Built a Streamlit dashboard for interactive scenario analysis.
+
+Key finding
+The initial held-out evaluation showed Random Forest performing better than the two other required models. The final model comparison is saved in models/model_comparison.csv after running the training script.
+
+Decision-support output
+For a selected product, region, and ship mode, the dashboard identifies the current factory, estimates baseline lead time, compares all five factory scenarios, reports estimated lead-time improvement, shows historical gross margin, and flags scenarios with limited historical support.
+
+Important limitation
+The supplied dataset does not contain historical factory assignments, transportation costs, or factory capacity. Therefore, the system does not claim that the ML model has learned a causal factory effect. Factory reassignment values are scenario estimates based on a transparent geographic proxy. Absolute logistics cost savings and capacity optimization cannot be calculated from the available data.
+
+Recommended business next step
+To move from prototype to operational optimization, collect historical factory assignment, shipment-origin data, customer coordinates, freight cost, production capacity, production processing time, and service-level constraints.
